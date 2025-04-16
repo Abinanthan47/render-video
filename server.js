@@ -4,7 +4,7 @@ import multer from 'multer';
 import ffmpeg from 'fluent-ffmpeg';
 import fs from 'fs';
 import path from 'path';
-import { bucket } from "./firebase/firebaseAdmin";
+import { bucket } from "./firebase/firebaseAdmin.js";
 
 const app = express();
 const upload = multer({ dest: 'uploads/' });
