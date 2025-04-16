@@ -3,7 +3,7 @@ import serviceAccount from './firebase/serviceAccountKey.json' assert { type: 'j
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  storageBucket: 'your-project-id.appspot.com',
+  storageBucket: 'autoshortz-ai.firebasestorage.app',
 });
 
 const bucket = admin.storage().bucket();
