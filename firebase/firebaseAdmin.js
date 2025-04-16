@@ -12,8 +12,10 @@ const serviceAccount = JSON.parse(fs.readFileSync(serviceAccountPath, 'utf-8'));
 if (!admin.apps.length) {
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-    storageBucket: "autoshortz-ai.firebasestorage.app" // 🔁 replace with your bucket if using Storage
+    storageBucket: "autoshortz-ai.firebasestorage.app" // Replace with your actual bucket
   });
 }
 
-export default admin;
+const bucket = admin.storage().bucket(); // 👈 this is the bucket you're trying to use
+
+export { admin, bucket }; // 👈 now bucket is available to import
